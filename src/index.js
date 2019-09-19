@@ -4,6 +4,12 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 
 class Message extends React.Component {
+  render() {
+    return <div>{this.props.text}</div>;
+  }
+}
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,13 +18,7 @@ class Message extends React.Component {
   }
 
   render() {
-    return <div>{this.state.text}</div>;
-  }
-}
-
-class App extends React.Component {
-  render() {
-    return <Message />;
+    return <Message text={this.state.text} />;
   }
 }
 
